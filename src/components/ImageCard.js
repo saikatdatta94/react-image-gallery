@@ -10,6 +10,8 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Chip from '@material-ui/core/Chip'
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -34,11 +36,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ImageCard() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
     <Card className={classes.root}>
@@ -58,7 +55,41 @@ export default function ImageCard() {
           <span><b>Likes:</b> 4000</span>
         </Typography>  
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions>
+        <Grid spacing={1} container>
+          <Grid item>
+            <Chip
+              label="Img tag"
+              color="secondary"
+            />
+          </Grid>
+          <Grid item>
+            <Chip
+              label="Img tag"
+              color="secondary"
+            />
+          </Grid>
+          <Grid item>
+            <Chip
+              label="Img tag"
+              color="secondary"
+            />
+          </Grid>
+          <Grid item>
+            <Chip
+              label="Img tag"
+              color="secondary"
+            />
+          </Grid>
+          <Grid item>
+            <Chip
+              label="Img tag"
+              color="secondary"
+            />
+          </Grid>
+          
+        </Grid>
+        
         
       </CardActions>
       

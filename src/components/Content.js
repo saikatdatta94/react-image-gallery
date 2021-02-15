@@ -14,17 +14,27 @@ const Content = () =>{
     }
 
     return(
-        <Grid container spacing={2}>
-            <Grid item>
-                <ImageCard/>
-            </Grid>
-            <Grid item>
-                <ImageCard/>
-            </Grid>
-            <Grid item>
-                <ImageCard/>
+        // <></>
+        <Grid item>
+            <Grid container spacing={2}>
+                <Grid  md={4} item>
+                    <ImageCard/>
+                </Grid>
+                <Grid md={4} item>
+                    <ImageCard/>
+                </Grid>
+                <Grid md={4} item>
+                    <ImageCard/>
+                </Grid>
+                <Grid md={4} item>
+                    <ImageCard/>
+                </Grid>
+                <Grid md={4} item>
+                    <ImageCard/>
+                </Grid>
             </Grid>
         </Grid>
+        
           
                
     );

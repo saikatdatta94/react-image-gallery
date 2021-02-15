@@ -7,18 +7,23 @@ import Grid from '@material-ui/core/Grid';
 
 function App() {
   return (
-    <>
-    <Grid spacing={2} container direction="column">
+    <Grid container direction="column">
       <Grid item>
         <Header/>
       </Grid>
-      <Grid item>
-        <Content/>
+      <Grid container item>    
+        
+        <Grid md={2} item>
+          
+        </Grid>
+        <Grid md={8} item>
+          <Content/>
+        </Grid>
+        <Grid md={2} item>
+          
+        </Grid>
       </Grid>
-
-      
     </Grid>
-    </>
   );
 }
 
