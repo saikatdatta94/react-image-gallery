@@ -13,13 +13,13 @@ function App() {
       </Grid>
       <Grid container item>    
         
-        <Grid md={2} item>
+        <Grid md={1} item>
           
         </Grid>
-        <Grid md={8} item>
+        <Grid md={10} item>
           <Content/>
         </Grid>
-        <Grid md={2} item>
+        <Grid md={1} item>
           
         </Grid>
       </Grid>

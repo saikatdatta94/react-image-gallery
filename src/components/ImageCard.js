@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 64,
     paddingTop: '56.25%', // 16:9
   },
   content:{
@@ -34,14 +34,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ImageCard() {
+const ImageCard = (props) => {
+  const {previewURL,webformatURL} = props;
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image="https://source.unsplash.com/random"
+        image= {webformatURL}
         title="Paella dish"
       />
       <CardContent className={classes.content}>
@@ -97,3 +98,5 @@ export default function ImageCard() {
     </Card>
   );
 }
+
+export default  ImageCard;
