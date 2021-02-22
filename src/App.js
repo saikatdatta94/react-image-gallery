@@ -5,13 +5,22 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+const useStyles = makeStyles({
+    gapTop:{
+      marginTop: 16,
+    }
+})
+
 function App() {
+
+  const classes = useStyles();
+
   return (
     <Grid container direction="column">
       <Grid item>
         <Header/>
       </Grid>
-      <Grid container item>    
+      <Grid className={classes.gapTop} container item>    
         
         <Grid md={1} item>
           

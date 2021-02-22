@@ -18,18 +18,16 @@ const Content = () =>{
     },[])
 
     return(
-        <Grid item>
             <Grid container spacing={2}>
                 {images.map((image)=>{
                     return(
-                        <Grid  md={4} item>
-                            <ImageCard key={image.id} {...image} />
+                        <Grid key={image.id} md={4} item>
+                            <ImageCard {...image} />
                         </Grid>
                     )
                 })}
                 
             </Grid>
-        </Grid>
         
           
                

@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -13,10 +12,14 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Chip from '@material-ui/core/Chip'
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import ModeCommentOutlinedIcon from '@material-ui/icons/ModeCommentOutlined';
+import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
+import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { CommentOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,67 +35,69 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+
+  rightIcon: {
+    marginLeft: 'auto',
+  },
 }));
 
 const ImageCard = (props) => {
-  const {previewURL,webformatURL} = props;
+  const {previewURL,webformatURL,user,userImageURL} = props;
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <CardMedia
-        className={classes.media}
-        image= {webformatURL}
-        title="Paella dish"
-      />
-      <CardContent className={classes.content}>
-        <Typography>
-          <b>Photo by John Doe</b>
-          <br/>
-          <span><b>Views:</b> 4000</span>
-          <br/>
-          <span><b>Downloads:</b> 4000</span>
-          <br/>
-          <span><b>Likes:</b> 4000</span>
-        </Typography>  
-      </CardContent>
       <CardActions>
-        <Grid spacing={1} container>
-          <Grid item>
-            <Chip
-              label="Img tag"
-              color="secondary"
-            />
-          </Grid>
-          <Grid item>
-            <Chip
-              label="Img tag"
-              color="secondary"
-            />
-          </Grid>
-          <Grid item>
-            <Chip
-              label="Img tag"
-              color="secondary"
-            />
-          </Grid>
-          <Grid item>
-            <Chip
-              label="Img tag"
-              color="secondary"
-            />
-          </Grid>
-          <Grid item>
-            <Chip
-              label="Img tag"
-              color="secondary"
-            />
-          </Grid>
-          
+        <Grid spacing={1} container alignItems="center">
+            <Grid item>
+              <Avatar alt="Remy Sharp" src={userImageURL} />
+            </Grid>
+            <Grid item>
+              <Typography>
+                {`${user}`}
+              </Typography>
+            </Grid>
         </Grid>
-        
-        
       </CardActions>
+    
+      
+        <CardMedia
+          className={classes.media}
+          image= {webformatURL}
+          title="Paella dish"
+        />
+        <CardActions>
+        <Grid spacing={1} container >
+            <Grid item>
+               <FavoriteBorderOutlinedIcon
+                  fontSize="large"
+                  className={classes.iconWeight}
+               />
+            </Grid>
+            <Grid item>
+                <ModeCommentOutlinedIcon 
+                   fontSize="large"
+                />
+            </Grid>
+            <Grid item>
+                <SendOutlinedIcon
+                   fontSize="large"
+                   
+                />
+            </Grid>
+
+            <Grid className={classes.rightIcon} item>
+                <BookmarkBorderOutlinedIcon
+                   fontSize="large"
+                />
+            </Grid>
+        </Grid>
+      </CardActions>
+      <CardContent variant="body2" color="textSecondary">
+        <Typography>
+            Likes: 4000
+        </Typography>
+      </CardContent>
       
       
     </Card>
