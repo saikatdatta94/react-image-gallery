@@ -1,8 +1,7 @@
 import Header from "./components/Header";
 import Content from "./components/Content";
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
@@ -14,11 +13,17 @@ const useStyles = makeStyles({
 function App() {
 
   const classes = useStyles();
+  
+  const [searchPhrase,setSearchPhrase] = useState('');
+
+  useEffect(()=>{
+   console.log("From App: "+searchPhrase);
+  },[searchPhrase])
 
   return (
     <Grid container direction="column">
       <Grid item>
-        <Header/>
+        <Header searchPhrase={(text)=>setSearchPhrase(text)} />
       </Grid>
       <Grid className={classes.gapTop} container item>    
         
@@ -26,7 +31,7 @@ function App() {
           
         </Grid>
         <Grid md={10} xs={12} item>
-          <Content/>
+          <Content searchPhrase={searchPhrase}/>
         </Grid>
         <Grid md={1} xs={false} item>
           
