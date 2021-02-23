@@ -22,13 +22,13 @@ function App() {
       </Grid>
       <Grid className={classes.gapTop} container item>    
         
-        <Grid md={1} item>
+        <Grid md={1} xs={false} item>
           
         </Grid>
-        <Grid md={10} item>
+        <Grid md={10} xs={12} item>
           <Content/>
         </Grid>
-        <Grid md={1} item>
+        <Grid md={1} xs={false} item>
           
         </Grid>
       </Grid>

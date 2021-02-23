@@ -23,7 +23,7 @@ import { CommentOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 'auto',
   },
   media: {
     height: 64,
@@ -39,10 +39,14 @@ const useStyles = makeStyles((theme) => ({
   rightIcon: {
     marginLeft: 'auto',
   },
+  bold:{
+    fontStyle: 'bold',
+  },
 }));
 
 const ImageCard = (props) => {
-  const {previewURL,webformatURL,user,userImageURL} = props;
+  const {previewURL,webformatURL,user,userImageURL,tags} = props;
+  const tagArr = tags.split(",");
   const classes = useStyles();
 
   return (
@@ -95,7 +99,13 @@ const ImageCard = (props) => {
       </CardActions>
       <CardContent variant="body2" color="textSecondary">
         <Typography>
-            Likes: 4000
+            <strong>Likes:</strong> 4000
+            <br/>
+            {tagArr.map((tag,index)=>{
+              return(
+                <strong key={index}> {` #${tag}`}</strong>
+              )
+            })}
         </Typography>
       </CardContent>
       
