@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Content from "./components/Content";
 import React,{useEffect, useState} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'; 
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
